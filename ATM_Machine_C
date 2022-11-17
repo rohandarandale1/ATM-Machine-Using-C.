@@ -1,0 +1,72 @@
+`/* C Project Of ATM Machine */
+
+#include <stdio.h>
+
+int main()
+
+{
+    
+    float i, z;                 //i is for taking  intial amount in bank acount, z for amount to be credit in a bank account//
+    
+    char ch;                    //character ch is used for checking the conditions like amount credited, debited or checking the balance//
+    
+    printf("Enter the Intial Amount:\n");
+    
+    scanf("%f", &i);
+    
+    printf("Enter 'c' for amount credited:\n Enter 'd' for amount debited:\n Enter 'b' for checking your balance:\n");
+    
+    scanf("\n%c", &ch);
+    
+    switch(ch)
+    
+    {
+        
+        case 'c':
+        
+        printf("Enter the Amount to be Credited:\n");
+        
+        scanf("%f", &z);
+        
+        i=i+z;
+        
+        printf("New Amount in your account is:%0.2f", i);
+        
+        break;
+        
+        case 'd':
+        
+        printf("Enter the amount to be Debited:\n");
+        
+        scanf("%f", &z);
+        
+        if (i>=z)
+        
+        {
+            i=i-z;
+            
+            printf("New Amount in your account is:%0.2f", i);
+        }
+        
+        else
+        
+        {
+            printf("Insufficient Balance in your account");
+        }
+        
+        break;
+        
+        case 'b':
+        
+        printf("Total Balance in your Account is:%0.2f", i);
+        
+        break;
+        
+        default:
+            
+            printf("Service is not Available");
+        
+    }
+    
+    return 0;
+}
